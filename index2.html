@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мой фотосайт — мобильная версия</title>
+  <style>
+    :root { --overlay: rgba(0,0,0,.35); }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      height: 100%;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      -webkit-font-smoothing: antialiased;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: #0a1a3a;
+    }
+    .slide {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: start;
+      color: white;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .slide .overlay { position: absolute; inset: 0; background: var(--overlay); }
+    .slide .content { position: relative; z-index: 1; padding: 1rem; max-width: 90%; color: #fff; }
+    .music-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #2d3a92;
+      color: #fff;
+      font-size: 60px;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,.4);
+      text-align: center;
+    }
+    .music-btn:hover { transform: translateY(-2px); }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <!-- Первый экран: фон - page1.webp -->
+  <section class="slide" style="background-image: url('page1.webp');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Первая часть</h2>
+      <p>Фон — ваша первая картинка (page1.webp).</p>
+    </div>
+  </section>
+
+  <!-- Второй экран: фон - page2.webp -->
+  <section class="slide" style="background-image: url('page2.webp');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Вторая часть</h2>
+      <p>Фон — ваша вторая картинка (page2.webp).</p>
+    </div>
+  </section>
+
+  <!-- Последний экран: кнопка музыки, переход на YouTube Music -->
+  <section class="slide" id="music-section" style="background: #0b1a3a;">
+    <div class="overlay"></div>
+    <div class="content">
+      <a href="https://music.youtube.com/watch?v=ec1whdU_TJI&si=B2KPESOFunnyB7M6s/" target="_blank" rel="noopener" class="music-btn" aria-label="Перейти к музыке YouTube Music">
+        🎵
+      </a>
+      <p style="margin-top:12px;">Нажмите на значок, чтобы открыть музыку YouTube Music</p>
+    </div>
+  </section>
+</body>
+</html>
